@@ -1,9 +1,11 @@
+# 基于 Repcz/Tool 的 Stash 配置（https://github.com/Repcz/Tool）
+# 要求 Stash 版本 ≥ 2.6.0
+# 使用前必须把 proxy-providers 里的 url 换成你机场的订阅链接
+
 mode: rule
 log-level: info
 
 dns:
-  enable: true
-  enhanced-mode: fake-ip
   default-nameserver:
     - 223.5.5.5
     - 119.29.29.29
@@ -27,14 +29,10 @@ dns:
 
 proxy-providers:
   Subscribe:
-    type: http
     url: http://your-service-provider
     interval: 86400
-    path: ./proxies/Subscribe.yaml
-    health-check:
-      enable: true
-      url: http://www.gstatic.com/generate_204
-      interval: 600
+    benchmark-url: http://www.gstatic.com/generate_204
+    benchmark-timeout: 5
 
 proxy-groups:
   - name: Manual
@@ -176,7 +174,6 @@ proxy-groups:
   - name: HongKong
     type: url-test
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Hong_Kong.png
-    url: http://www.gstatic.com/generate_204
     interval: 600
     include-all: true
     filter: '(?i)🇭🇰|香港|沪港|深港|广港|(\b(HK|HKG|Hong\s?Kong|Hong)\b)'
@@ -184,7 +181,6 @@ proxy-groups:
   - name: United States
     type: url-test
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/United_States.png
-    url: http://www.gstatic.com/generate_204
     interval: 600
     include-all: true
     filter: '(?i)🇺🇸|美国|洛杉矶|圣何塞|西雅图|硅谷|纽约|芝加哥|达拉斯|凤凰城|弗里蒙特|阿什本|(\b(US|USA|United\s?States|America|LA|LAX|SJC|SEA|NYC|ORD|DFW|PHX|IAD)\b)'
@@ -192,7 +188,6 @@ proxy-groups:
   - name: Singapore
     type: url-test
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Singapore.png
-    url: http://www.gstatic.com/generate_204
     interval: 600
     include-all: true
     filter: '(?i)🇸🇬|新加坡|狮城|坡|(\b(SG|SGP|SIN|Singapore)\b)'
@@ -200,7 +195,6 @@ proxy-groups:
   - name: Japan
     type: url-test
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Japan.png
-    url: http://www.gstatic.com/generate_204
     interval: 600
     include-all: true
     filter: '(?i)🇯🇵|日本|东京|大阪|埼玉|名古屋|(\b(JP|JPN|Japan|Tokyo|Osaka|TYO|NRT|HND|KIX)\b)'
@@ -208,226 +202,171 @@ proxy-groups:
   - name: Germany
     type: url-test
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Germany.png
-    url: http://www.gstatic.com/generate_204
     interval: 600
     include-all: true
     filter: '(?i)🇩🇪|德国|法兰克福|柏林|慕尼黑|杜塞尔多夫|纽伦堡|(\b(DE|DEU|Germany|German|Frankfurt|Berlin|Munich|FRA|BER|MUC)\b)'
 
 rule-providers:
   Direct:
-    type: http
     behavior: classical
     format: text
     interval: 86400
-    path: ./rules/Direct.list
     url: https://github.com/Repcz/Tool/raw/X/Stash/Rules/Direct.list
 
   Lan:
-    type: http
     behavior: classical
     format: text
     interval: 86400
-    path: ./rules/Lan.list
     url: https://github.com/Repcz/Tool/raw/X/Stash/Rules/Lan.list
 
   Reject:
-    type: http
     behavior: classical
     format: text
     interval: 86400
-    path: ./rules/Reject.list
     url: https://github.com/Repcz/Tool/raw/X/Stash/Rules/Reject.list
 
   AppleCN:
-    type: http
     behavior: classical
     format: text
     interval: 86400
-    path: ./rules/AppleCN.list
     url: https://github.com/Repcz/Tool/raw/X/Stash/Rules/AppleCN.list
 
   AppleProxy:
-    type: http
     behavior: classical
     format: text
     interval: 86400
-    path: ./rules/AppleProxy.list
     url: https://github.com/Repcz/Tool/raw/X/Stash/Rules/AppleProxy.list
 
   AppleServers:
-    type: http
     behavior: classical
     format: text
     interval: 86400
-    path: ./rules/AppleServers.list
     url: https://github.com/Repcz/Tool/raw/X/Stash/Rules/AppleServers.list
 
   Microsoft:
-    type: http
     behavior: classical
     format: text
     interval: 86400
-    path: ./rules/Microsoft.list
     url: https://github.com/Repcz/Tool/raw/X/Stash/Rules/Microsoft.list
 
   Github:
-    type: http
     behavior: classical
     format: text
     interval: 86400
-    path: ./rules/Github.list
     url: https://github.com/Repcz/Tool/raw/X/Stash/Rules/Github.list
 
   Google:
-    type: http
     behavior: classical
     format: text
     interval: 86400
-    path: ./rules/Google.list
     url: https://github.com/Repcz/Tool/raw/X/Stash/Rules/Google.list
 
   YouTube:
-    type: http
     behavior: classical
     format: text
     interval: 86400
-    path: ./rules/YouTube.list
     url: https://github.com/Repcz/Tool/raw/X/Stash/Rules/YouTube.list
 
   Telegram:
-    type: http
     behavior: classical
     format: text
     interval: 86400
-    path: ./rules/Telegram.list
     url: https://github.com/Repcz/Tool/raw/X/Stash/Rules/Telegram.list
 
   Twitter:
-    type: http
     behavior: classical
     format: text
     interval: 86400
-    path: ./rules/Twitter.list
     url: https://github.com/Repcz/Tool/raw/X/Stash/Rules/Twitter.list
 
   Facebook:
-    type: http
     behavior: classical
     format: text
     interval: 86400
-    path: ./rules/Facebook.list
     url: https://github.com/Repcz/Tool/raw/X/Stash/Rules/Facebook.list
 
   Instagram:
-    type: http
     behavior: classical
     format: text
     interval: 86400
-    path: ./rules/Instagram.list
     url: https://github.com/Repcz/Tool/raw/X/Stash/Rules/Instagram.list
 
   Reddit:
-    type: http
     behavior: classical
     format: text
     interval: 86400
-    path: ./rules/Reddit.list
     url: https://github.com/Repcz/Tool/raw/X/Stash/Rules/Reddit.list
 
   TikTok:
-    type: http
     behavior: classical
     format: text
     interval: 86400
-    path: ./rules/TikTok.list
     url: https://github.com/Repcz/Tool/raw/X/Stash/Rules/TikTok.list
 
   Steam:
-    type: http
     behavior: classical
     format: text
     interval: 86400
-    path: ./rules/Steam.list
     url: https://github.com/Repcz/Tool/raw/X/Stash/Rules/Steam.list
 
   Epic:
-    type: http
     behavior: classical
     format: text
     interval: 86400
-    path: ./rules/Epic.list
     url: https://github.com/Repcz/Tool/raw/X/Stash/Rules/Epic.list
 
   AI:
-    type: http
     behavior: classical
     format: text
     interval: 86400
-    path: ./rules/AI.list
     url: https://github.com/Repcz/Tool/raw/X/Stash/Rules/AI.list
 
   Emby:
-    type: http
     behavior: classical
     format: text
     interval: 86400
-    path: ./rules/Emby.list
     url: https://github.com/Repcz/Tool/raw/X/Stash/Rules/Emby.list
 
   Spotify:
-    type: http
     behavior: classical
     format: text
     interval: 86400
-    path: ./rules/Spotify.list
     url: https://github.com/Repcz/Tool/raw/X/Stash/Rules/Spotify.list
 
   Bahamut:
-    type: http
     behavior: classical
     format: text
     interval: 86400
-    path: ./rules/Bahamut.list
     url: https://github.com/Repcz/Tool/raw/X/Stash/Rules/Bahamut.list
 
   Netflix:
-    type: http
     behavior: classical
     format: text
     interval: 86400
-    path: ./rules/Netflix.list
     url: https://github.com/Repcz/Tool/raw/X/Stash/Rules/Netflix.list
 
   Disney:
-    type: http
     behavior: classical
     format: text
     interval: 86400
-    path: ./rules/Disney.list
     url: https://github.com/Repcz/Tool/raw/X/Stash/Rules/Disney.list
 
   PrimeVideo:
-    type: http
     behavior: classical
     format: text
     interval: 86400
-    path: ./rules/PrimeVideo.list
     url: https://github.com/Repcz/Tool/raw/X/Stash/Rules/PrimeVideo.list
 
   HBO:
-    type: http
     behavior: classical
     format: text
     interval: 86400
-    path: ./rules/HBO.list
     url: https://github.com/Repcz/Tool/raw/X/Stash/Rules/HBO.list
 
   Proxy:
-    type: http
     behavior: classical
     format: text
     interval: 86400
-    path: ./rules/Proxy.list
     url: https://github.com/Repcz/Tool/raw/X/Stash/Rules/Proxy.list
 
 rules:
