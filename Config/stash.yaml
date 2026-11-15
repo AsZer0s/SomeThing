@@ -16,49 +16,29 @@ proxy-providers:
     benchmark-url: http://1.1.1.1/generate_204
 
 proxy-groups:
-
 - {name: Manual, icon: https://github.com/shindgewongxj/WHATSINStash/raw/main/icon/%24tash.png, type: select, use: [Subscribe], proxies: [HongKong, United States, Singapore, Japan, Germany, DIRECT]}
-
 - {name: Global, icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Global.png, type: select, proxies: [Manual, HongKong, United States, Singapore, Japan, Germany]}
-
 - {name: Streaming, icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/YouTube.png, type: select, proxies: [Manual, HongKong, United States, Singapore, Japan, Germany]}
-
 - {name: Microsoft, icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Microsoft.png, type: select, proxies: [Manual, HongKong, United States, Singapore, Japan, Germany]}
-
 - {name: Google, icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Google_Search.png, type: select, proxies: [Manual, HongKong, United States, Singapore, Japan, Germany]}
-
 - {name: AI, icon: https://raw.githubusercontent.com/Orz-3/mini/master/Color/OpenAI.png, type: select, proxies: [Manual, HongKong, United States, Singapore, Japan, Germany]}
-
 - {name: Social, icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Twitter.png, type: select, proxies: [Manual, HongKong, United States, Singapore, Japan, Germany]}
-
 - {name: Telegram, icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Telegram.png, type: select, proxies: [Manual, HongKong, United States, Singapore, Japan, Germany]}
-
 - {name: Game, icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Game.png, type: select, proxies: [Manual, HongKong, United States, Singapore, Japan, Germany, DIRECT]}
-
 - {name: Emby, icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Emby.png, type: select, include-all: true, proxies: [HongKong, United States, Singapore, Japan, Germany]}
-
 - {name: Spotify, icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Spotify.png, type: select, proxies: [Manual, HongKong, United States, Singapore, Japan, Germany]}
-
 - {name: Final, icon: https://github.com/shindgewongxj/WHATSINStash/raw/main/icon/friestash.png, type: select, proxies: [Manual, HongKong, United States, Singapore, Japan, Germany, DIRECT]}
 
-- {name: HongKong, icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Hong_Kong.png, type: url-test, interval: 600, include-all: true, filter: "(?i)🇭🇰|香港|沪港|深港|广港|(\b(HK|HKG|Hong\s?Kong|Hong)\b)"}
-
-- {name: United States, icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/United_States.png, type: url-test, interval: 600, include-all: true, filter: "(?i)🇺🇸|美国|洛杉矶|圣何塞|西雅图|硅谷|纽约|芝加哥|达拉斯|凤凰城|弗里蒙特|阿什本|(\b(US|USA|United\s?States|America|LA|LAX|SJC|SEA|NYC|ORD|DFW|PHX|IAD)\b)"}
-
-- {name: Singapore, icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Singapore.png, type: url-test, interval: 600, include-all: true, filter: "(?i)🇸🇬|新加坡|狮城|坡|(\b(SG|SGP|SIN|Singapore)\b)"}
-
-- {name: Japan, icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Japan.png, type: url-test, interval: 600, include-all: true, filter: "(?i)🇯🇵|日本|东京|大阪|埼玉|名古屋|(\b(JP|JPN|Japan|Tokyo|Osaka|TYO|NRT|HND|KIX)\b)"}
-
-- {name: Germany, icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Germany.png, type: url-test, interval: 600, include-all: true, filter: "(?i)🇩🇪|德国|法兰克福|柏林|慕尼黑|杜塞尔多夫|纽伦堡|(\b(DE|DEU|Germany|German|Frankfurt|Berlin|Munich|FRA|BER|MUC)\b)"}
+- {name: HongKong, icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Hong_Kong.png, type: url-test, interval: 600, include-all: true, filter: "(?i)🇭🇰|香港|沪港|深港|广港|(\\b(HK|HKG|Hong\\s?Kong|Hong)\\b)"}
+- {name: United States, icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/United_States.png, type: url-test, interval: 600, include-all: true, filter: "(?i)🇺🇸|美国|洛杉矶|圣何塞|西雅图|硅谷|纽约|芝加哥|达拉斯|凤凰城|弗里蒙特|阿什本|(\\b(US|USA|United\\s?States|America|LA|LAX|SJC|SEA|NYC|ORD|DFW|PHX|IAD)\\b)"}
+- {name: Singapore, icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Singapore.png, type: url-test, interval: 600, include-all: true, filter: "(?i)🇸🇬|新加坡|狮城|坡|(\\b(SG|SGP|SIN|Singapore)\\b)"}
+- {name: Japan, icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Japan.png, type: url-test, interval: 600, include-all: true, filter: "(?i)🇯🇵|日本|东京|大阪|埼玉|名古屋|(\\b(JP|JPN|Japan|Tokyo|Osaka|TYO|NRT|HND|KIX)\\b)"}
+- {name: Germany, icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Germany.png, type: url-test, interval: 600, include-all: true, filter: "(?i)🇩🇪|德国|法兰克福|柏林|慕尼黑|杜塞尔多夫|纽伦堡|(\\b(DE|DEU|Germany|German|Frankfurt|Berlin|Munich|FRA|BER|MUC)\\b)"}
 
 rule-providers:
   Direct: {behavior: classical, format: text, interval: 86400, url: https://github.com/Repcz/Tool/raw/X/Stash/Rules/Direct.list}
   Lan: {behavior: classical, format: text, interval: 86400, url: https://github.com/Repcz/Tool/raw/X/Stash/Rules/Lan.list}
-  ChinaDomain: {behavior: classical, format: text, interval: 86400, url: https://github.com/Repcz/Tool/raw/X/Stash/Rules/ChinaDomain.list}
-  ChinaIP: {behavior: classical, format: text, interval: 86400, url: https://github.com/Repcz/Tool/raw/X/Stash/Rules/ChinaIP.list}
-  Bilibili: {behavior: classical, format: text, interval: 86400, url: https://github.com/Repcz/Tool/raw/X/Stash/Rules/Bilibili.list}
   Reject: {behavior: classical, format: text, interval: 86400, url: https://github.com/Repcz/Tool/raw/X/Stash/Rules/Reject.list}
-  AdGuardChinese: {behavior: classical, format: text, interval: 86400, url: https://github.com/Repcz/Tool/raw/X/Stash/Rules/AdGuardChinese.list}
   AppleCN: {behavior: classical, format: text, interval: 86400, url: https://github.com/Repcz/Tool/raw/X/Stash/Rules/AppleCN.list}
   AppleProxy: {behavior: classical, format: text, interval: 86400, url: https://github.com/Repcz/Tool/raw/X/Stash/Rules/AppleProxy.list}
   AppleServers: {behavior: classical, format: text, interval: 86400, url: https://github.com/Repcz/Tool/raw/X/Stash/Rules/AppleServers.list}
@@ -82,14 +62,11 @@ rule-providers:
   Disney: {behavior: classical, format: text, interval: 86400, url: https://github.com/Repcz/Tool/raw/X/Stash/Rules/Disney.list}
   PrimeVideo: {behavior: classical, format: text, interval: 86400, url: https://github.com/Repcz/Tool/raw/X/Stash/Rules/PrimeVideo.list}
   HBO: {behavior: classical, format: text, interval: 86400, url: https://github.com/Repcz/Tool/raw/X/Stash/Rules/HBO.list}
-  ProxyMedia: {behavior: classical, format: text, interval: 86400, url: https://github.com/Repcz/Tool/raw/X/Stash/Rules/ProxyMedia.list}
   Proxy: {behavior: classical, format: text, interval: 86400, url: https://github.com/Repcz/Tool/raw/X/Stash/Rules/Proxy.list}
 
 rules:
 - RULE-SET,Direct,DIRECT
-- RULE-SET,Bilibili,DIRECT
 - RULE-SET,Reject,REJECT
-- RULE-SET,AdGuardChinese,REJECT
 - RULE-SET,AI,AI
 - RULE-SET,Telegram,Telegram
 - RULE-SET,Twitter,Social
@@ -110,13 +87,10 @@ rules:
 - RULE-SET,Disney,Streaming
 - RULE-SET,PrimeVideo,Streaming
 - RULE-SET,HBO,Streaming
-- RULE-SET,ProxyMedia,Streaming
 - RULE-SET,AppleCN,DIRECT
 - RULE-SET,AppleProxy,United States
 - RULE-SET,AppleServers,HongKong
 - RULE-SET,Proxy,Global
 - RULE-SET,Lan,DIRECT
-- RULE-SET,ChinaDomain,DIRECT
-- RULE-SET,ChinaIP,DIRECT
 - GEOIP,CN,DIRECT
 - MATCH,Final
