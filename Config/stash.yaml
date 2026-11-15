@@ -24,11 +24,6 @@ dns:
     - 'lancache.steamcontent.com'
 
 proxy-providers:
-  Subscribe:
-    url: http://your-service-provider
-    interval: 86400
-    benchmark-url: http://www.gstatic.com/generate_204
-    benchmark-timeout: 5
 
 proxy-groups:
   - name: Manual
